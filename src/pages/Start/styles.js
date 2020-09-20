@@ -10,10 +10,13 @@ const useStyles = makeStyles(() =>
       transform: 'translate(-50%, -50%)',
     },
     menu: {
-      height: '100px',
+      height: '150px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+    },
+    instruction_btn: {
+      marginTop: '-10px',
     }
   }),
 );

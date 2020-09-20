@@ -1,7 +1,13 @@
 {
-  "name": "hot-cold",
+  "name": "game-hot-and-cold",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -17,11 +23,8 @@
     "react-scripts": "3.4.3",
     "sequelize": "^6.3.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "prop-types": "^15.7.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,8 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "prop-types": "^15.7.2"
   }
 }

@@ -40,6 +40,14 @@ function Start() {
             История игр
           </NavLink>
         </Button>
+        <Button
+          color="primary"
+          className={classes.instruction_btn}
+        >
+          <NavLink to='/instruction'>
+            Инструкция
+          </NavLink>
+        </Button>
       </Paper>
       <ModalStart
         open={showedModal}

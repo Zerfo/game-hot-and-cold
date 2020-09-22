@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Keyboard from 'components/Keyboard';
 import Number from 'components/Number';
@@ -6,7 +7,7 @@ import Marker from 'components/Marker';
 
 import useStyles from './styles';
 
-function History() {
+function History({ _number }) {
   const classes = useStyles();
   const [number, setNumber] = React.useState('')
 
@@ -29,11 +30,18 @@ function History() {
     <div className={classes.container}>
       <div>
         <Number value={number} />
-        <Marker value={number} />
+        <Marker
+          value={number}
+          number={_number}
+        />
       </div>
       <Keyboard onPick={onPick} onDelete={onDelete} />
     </div>
   )
 }
 
-export default History;
+const mapStateToProps = (store) => ({
+  _number: store.game.number,
+})
+
+export default connect(mapStateToProps, null)(History);

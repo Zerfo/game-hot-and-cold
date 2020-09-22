@@ -19,7 +19,7 @@ const routes = [
   },
   {
     component: Instruction,
-    path: 'instruction',
+    path: '/instruction',
   }
 ];
 

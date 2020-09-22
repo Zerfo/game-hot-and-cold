@@ -2,6 +2,7 @@ import React from 'react';
 
 import Keyboard from 'components/Keyboard';
 import Number from 'components/Number';
+import Marker from 'components/Marker';
 
 import useStyles from './styles';
 
@@ -13,6 +14,8 @@ function History() {
     if (number.length < 3) {
       const nextCode = number + value.toString();
       setNumber(nextCode);
+    } else if(number === '000') {
+      // TODO: write a condition for 000
     }
   }
   const onDelete = () => {
@@ -24,7 +27,10 @@ function History() {
 
   return (
     <div className={classes.container}>
-      <Number value={number} />
+      <div>
+        <Number value={number} />
+        <Marker value={number} />
+      </div>
       <Keyboard onPick={onPick} onDelete={onDelete} />
     </div>
   )

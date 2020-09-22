@@ -6,7 +6,7 @@ const useStyles = makeStyles(() =>
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-around',
-      height: '100%',
+      height: 'calc(100vh - 65px)',
     },
   }),
 );

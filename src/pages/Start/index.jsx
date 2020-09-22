@@ -1,20 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
 import { Paper, Button } from '@material-ui/core';
 
 import ModalStart from 'components/ModalStart';
 
+import { startGame } from 'store/game/actions';
+
 import useStyles from './styles';
 
-function Start() {
+function Start({ _startGame }) {
   const classes = useStyles();
   const [showedModal, onShow] = React.useState(false);
 
   const handleClickShow = () => onShow(!showedModal);
   const handleClose = () => onShow(false);
-  const startGame = (nickname) => {
-    localStorage.setItem('nickname', nickname);
+  const onStartGame = (nickname) => {
+    _startGame(nickname);
     handleClose();
   };
 
@@ -51,11 +54,15 @@ function Start() {
       </Paper>
       <ModalStart
         open={showedModal}
-        startGame={startGame}
+        startGame={onStartGame}
         handleClose={handleClose}
       />
     </div>
   )
 }
 
-export default Start;
+const mapDispatchToProps = (dispatch) => ({
+  _startGame: (nickname) => dispatch(startGame(nickname)),
+})
+
+export default connect(null, mapDispatchToProps)(Start);

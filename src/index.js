@@ -8,9 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import 'styles/index.css';
 
 render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
+  <Root />,
   document.getElementById('root')
 );
 

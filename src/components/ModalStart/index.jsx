@@ -45,7 +45,7 @@ function ModalStart({ open, startGame, handleClose }) {
         </Button>
         <Button
           disabled={nickname.length === 0}
-          onClick={startGame}
+          onClick={() => startGame(nickname)}
           color="primary"
         >
           <Link to="/game">

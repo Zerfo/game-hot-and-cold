@@ -33,7 +33,7 @@ function Stopwatch() {
     }, 10);
 
     return () => clearInterval(timerInterval);
-  })
+  }, [time])
 
   return (
     <Toolbar className={classes.container}>

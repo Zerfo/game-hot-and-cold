@@ -5,7 +5,7 @@ import { Toolbar, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 
-function Stopwatch() {
+function Stopwatch({ onChange }) {
   const classes = useStyles();
   const [time, setTime] = useState({
     min: 0,
@@ -30,10 +30,11 @@ function Stopwatch() {
       }
 
       setTime(newTime);
+      onChange(Object.values(newTime).map(itm => itm < 10 ? '0' + itm : itm).join(':'));
     }, 10);
 
     return () => clearInterval(timerInterval);
-  }, [time])
+  }, [time, onChange])
 
   return (
     <Toolbar className={classes.container}>

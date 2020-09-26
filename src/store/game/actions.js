@@ -7,8 +7,9 @@ export function startGame(nickname) {
   }
 }
 
-export function stopGame() {
+export function stopGame(time) {
   return {
     type: STOP_GAME,
+    payload: time,
   }
 }

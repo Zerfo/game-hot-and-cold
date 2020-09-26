@@ -2,7 +2,8 @@ import { START_GAME, STOP_GAME } from './constants';
 
 const initialState = {
   number: '',
-  nickname: '',
+  nickname: 'Nikolay',
+  time: '',
   isStarted: false,
 };
 
@@ -27,6 +28,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isStarted: false,
+        time: action.payload || '00:00:00',
       }
     default:
       return state;

@@ -11,8 +11,9 @@ import useStyles from './styles';
 function FinishGame({ nickname, time, _stopGame, _startGame }) {
   const classes = useStyles();
   useEffect(() => {
-    _stopGame();
+    _stopGame(localStorage.getItem('time'));
     // TODO: write function for saving the game result
+    return () => localStorage.removeItem('time');
   }, [_stopGame]);
 
   return (
@@ -25,7 +26,7 @@ function FinishGame({ nickname, time, _stopGame, _startGame }) {
           Поздравляем, {nickname}!
         </Typography>
         <Typography variant="h6" noWrap>
-          Итоговое время игры: {time} (мин:сек:мс)
+          Итоговое время игры: {localStorage.getItem('time')} (мин:сек:мс)
         </Typography>
         <Button
           variant="contained"
@@ -46,7 +47,7 @@ const mapStateToProps = (store) => ({
   time: store.game.time,
 });
 const mapDispatchToProps = (dispatch) => ({
-  _stopGame: () => dispatch(stopGame()),
+  _stopGame: (time) => dispatch(stopGame(time)),
   _startGame: (nickname) => dispatch(startGame(nickname)),
 });
 

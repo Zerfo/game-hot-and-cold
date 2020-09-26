@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import { Toolbar, Typography } from '@material-ui/core';
 
+import { stopGame } from 'store/game/actions';
 
 import useStyles from './styles';
 
-function Stopwatch({ onChange }) {
+function Stopwatch({ _stopGame }) {
   const classes = useStyles();
   const [time, setTime] = useState({
     min: 0,
@@ -28,13 +30,12 @@ function Stopwatch({ onChange }) {
         newTime.min += 1;
         newTime.sec = 0;
       }
-
+      localStorage.setItem('time', Object.values(time).map(itm => itm < 10 ? '0' + itm : itm).join(':'));
       setTime(newTime);
-      onChange(Object.values(newTime).map(itm => itm < 10 ? '0' + itm : itm).join(':'));
     }, 10);
 
     return () => clearInterval(timerInterval);
-  }, [time, onChange])
+  });
 
   return (
     <Toolbar className={classes.container}>
@@ -47,4 +48,8 @@ function Stopwatch({ onChange }) {
   )
 }
 
-export default Stopwatch;
+const mapDispatchToProps = (dispatch) => ({
+  _stopGame: (time) => dispatch(stopGame(time)),
+});
+
+export default connect(null, mapDispatchToProps)(Stopwatch);

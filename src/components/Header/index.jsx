@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom';
@@ -12,18 +12,17 @@ import useStyles from './styles';
 
 function Header({ isStarted, _stopGame }) {
   const classes = useStyles();
-  const [time, setTime] = useState()
 
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
         <Typography variant="h6" noWrap className={classes.title}>
-          <Link to="/" onClick={() => _stopGame(time)}>
+          <Link to="/" onClick={_stopGame}>
             Горячо – Холодно
           </Link>
         </Typography>
       </Toolbar>
-      {isStarted && <Stopwatch onChange={setTime} />}
+      {isStarted && <Stopwatch />}
     </AppBar>
   );
 }
@@ -32,7 +31,7 @@ const mapStateToProps = (store) => ({
   isStarted: store.game.isStarted,
 });
 const mapDispatchToProps = (dispatch) => ({
-  _stopGame: (time) => dispatch(stopGame(time)),
+  _stopGame: () => dispatch(stopGame()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

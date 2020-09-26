@@ -1,6 +1,7 @@
 import Start from 'pages/Start';
-import History from 'pages/History';
 import Game from 'pages/Game';
+import FinishGame from 'pages/FinishGame';
+import History from 'pages/History';
 import Instruction from 'pages/Instruction';
 
 const routes = [
@@ -10,12 +11,16 @@ const routes = [
     path: '/',
   },
   {
-    component: History,
-    path: '/history',
-  },
-  {
     component: Game,
     path: '/game',
+  },
+  {
+    component: FinishGame,
+    path: '/finish-game',
+  },
+  {
+    component: History,
+    path: '/history',
   },
   {
     component: Instruction,

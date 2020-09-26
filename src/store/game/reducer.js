@@ -1,8 +1,9 @@
-import { START_GAME } from './constants';
+import { START_GAME, STOP_GAME } from './constants';
 
 const initialState = {
   number: '',
   nickname: '',
+  isStarted: false,
 };
 
 export default function(state = initialState, action) {
@@ -19,7 +20,13 @@ export default function(state = initialState, action) {
       return {
         ...state,
         number,
+        isStarted: true,
         nickname: action.payload
+      }
+    case STOP_GAME:
+      return {
+        ...state,
+        isStarted: false,
       }
     default:
       return state;

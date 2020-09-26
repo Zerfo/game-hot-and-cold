@@ -3,19 +3,26 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
-      display: 'flex',
       alignItems: 'center',
+      display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-evenly',
       height: '70px',
+      justifyContent: 'space-evenly',
     },
     el: {
-      width: '50px',
+      fontWeight: 'bold',
       textAlign: 'center',
+      width: '50px',
     },
-    hot: {},
-    warmly: {},
-    cold: {},
+    hot: {
+      color: '#de4f12',
+    },
+    warmly: {
+      color: '#ffc130',
+    },
+    cold: {
+      color: '#30cbff',
+    },
   }),
 );
 

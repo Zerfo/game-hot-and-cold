@@ -5,8 +5,8 @@ const useStyles = makeStyles(() =>
     container: {
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'space-around',
       height: 'calc(100vh - 65px)',
+      justifyContent: 'space-around',
     },
   }),
 );

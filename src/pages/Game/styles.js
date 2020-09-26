@@ -5,8 +5,9 @@ const useStyles = makeStyles(() =>
     container: {
       display: 'flex',
       flexDirection: 'column',
-      height: 'calc(100vh - 65px)',
+      height: 'calc(100vh - 170px)',
       justifyContent: 'space-around',
+      overflow: 'hidden',
     },
   }),
 );

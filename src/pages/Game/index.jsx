@@ -15,8 +15,6 @@ function History({ _number }) {
     if (number.length < 3) {
       const nextCode = number + value.toString();
       setNumber(nextCode);
-    } else if(number === '000') {
-      // TODO: write a condition for 000
     }
   }
   const onDelete = () => {

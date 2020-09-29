@@ -12,7 +12,7 @@ const useStyles = makeStyles(() =>
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
-      height: '150px',
+      height: 150,
       justifyContent: 'space-between',
     },
   }),

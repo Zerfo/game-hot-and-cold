@@ -10,9 +10,9 @@ const useStyles = makeStyles(() =>
     keyboard__item: {
       cursor: 'pointer',
       display: 'inline-block',
-      fontSize: '36px',
-      height: '55px',
-      lineHeight: '55px',
+      fontSize: 36,
+      height: 55,
+      lineHeight: 55,
       position: 'relative',
       textAlign: 'center',
       verticalAlign: 'top',
@@ -21,10 +21,10 @@ const useStyles = makeStyles(() =>
     keyboard__item__delete: {
       color: 'inherit',
       display: 'inline-block',
-      height: '18px',
+      height: 18,
       margin: '-8px 0 0 -4px',
       verticalAlign: 'middle',
-      width: '23px',
+      width: 23,
     },
   }),
 );

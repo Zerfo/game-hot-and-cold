@@ -7,16 +7,16 @@ const useStyles = makeStyles(() =>
       position: 'absolute',
       top: '50%',
       transform: 'translate(-50%, -50%)',
-      width: '150px',
+      width: 150,
     },
     menu: {
       display: 'flex',
       flexDirection: 'column',
-      height: '150px',
+      height: 150,
       justifyContent: 'space-between',
     },
     instruction_btn: {
-      marginTop: '-10px',
+      marginTop: -10,
     }
   }),
 );

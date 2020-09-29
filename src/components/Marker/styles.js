@@ -6,13 +6,13 @@ const useStyles = makeStyles(() =>
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'row',
-      height: '70px',
+      height: 70,
       justifyContent: 'space-evenly',
     },
     el: {
       fontWeight: 'bold',
       textAlign: 'center',
-      width: '50px',
+      width: 50,
     },
     hot: {
       color: '#de4f12',

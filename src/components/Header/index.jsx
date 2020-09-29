@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Pt from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
@@ -27,6 +28,13 @@ function Header() {
     </AppBar>
     )
   );
+}
+
+Header.propTypes = {
+  isStarted: Pt.bool,
+}
+Header.defaultProps = {
+  isStarted: false,
 }
 
 export default Header;

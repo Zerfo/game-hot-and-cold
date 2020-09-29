@@ -1,4 +1,5 @@
 import React from 'react';
+import Pt from 'prop-types';
 
 import useStyles from './styles';
 
@@ -20,6 +21,13 @@ function Number({ value }) {
       </div>
     </div>
   );
+}
+
+Number.propTypes = {
+  value: Pt.string,
+}
+Number.defaultProps = {
+  value: '',
 }
 
 export default Number;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
+import Pt from 'prop-types';
 
 import comparison from 'utils/comparison';
 
@@ -42,6 +43,15 @@ function Marker({ value, number }) {
       { isRedirect && <Redirect to='/finish-game' /> }
     </div>
   );
+}
+
+Marker.propTypes = {
+  value: Pt.string,
+  number: Pt.string,
+}
+Marker.defaultProps = {
+  value: '',
+  number: '',
 }
 
 export default Marker;

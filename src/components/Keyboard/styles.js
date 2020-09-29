@@ -12,7 +12,7 @@ const useStyles = makeStyles(() =>
       display: 'inline-block',
       fontSize: 36,
       height: 55,
-      lineHeight: 55,
+      lineHeight: '55px',
       position: 'relative',
       textAlign: 'center',
       verticalAlign: 'top',

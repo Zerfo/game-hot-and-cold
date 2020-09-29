@@ -8,8 +8,6 @@ import Header from 'components/Header';
 
 import store from 'store';
 
-import history from 'utils/history';
-
 import routes from './routes';
 import useStyles from './styles';
 
@@ -19,7 +17,7 @@ function Root() {
   return (
     <Provider store={store}>
       <Container className={classes.container}>
-        <Router history={history}>
+        <Router>
           <Header />
           <Switch>
             {

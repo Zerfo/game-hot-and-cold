@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Pt from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import {
@@ -55,6 +56,17 @@ function ModalStart({ open, startGame, handleClose }) {
       </DialogActions>
     </Dialog>
   );
+}
+
+ModalStart.propTypes = {
+  open: Pt.bool,
+  startGame: Pt.func,
+  handleClose: Pt.func,
+}
+ModalStart.defaultProps = {
+  open: false,
+  startGame: () => {},
+  handleClose: () => {},
 }
 
 export default ModalStart;

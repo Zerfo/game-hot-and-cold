@@ -1,10 +1,11 @@
 import React from 'react';
+import Pt from 'prop-types';
 
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspace';
 
 import useStyles from './styles';
 
-function Header({ onPick, onDelete }) {
+function Keyboard({ onPick, onDelete }) {
   const classes = useStyles();
 
   return (
@@ -58,4 +59,13 @@ function Header({ onPick, onDelete }) {
   );
 }
 
-export default Header;
+Keyboard.propTypes = {
+  onPick: Pt.func,
+  onDelete: Pt.func,
+}
+Keyboard.defaultProps = {
+  onPick: () => {},
+  onDelete: () => {},
+}
+
+export default Keyboard;

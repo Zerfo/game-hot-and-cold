@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
@@ -10,28 +10,23 @@ import { stopGame } from 'store/game/actions';
 
 import useStyles from './styles';
 
-function Header({ isStarted, _stopGame }) {
+function Header() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  return (
+  return useSelector(({ game: { isStarted } }) => (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
         <Typography variant="h6" noWrap className={classes.title}>
-          <Link to="/" onClick={_stopGame}>
+          <Link to="/" onClick={() => dispatch(stopGame())}>
             Горячо – Холодно
           </Link>
         </Typography>
       </Toolbar>
-      {isStarted && <Stopwatch />}
+      { isStarted && <Stopwatch /> }
     </AppBar>
+    )
   );
 }
 
-const mapStateToProps = (store) => ({
-  isStarted: store.game.isStarted,
-});
-const mapDispatchToProps = (dispatch) => ({
-  _stopGame: () => dispatch(stopGame()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

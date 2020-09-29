@@ -1,5 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
 import { Paper, Button } from '@material-ui/core';
@@ -10,14 +10,15 @@ import { startGame } from 'store/game/actions';
 
 import useStyles from './styles';
 
-function Start({ _startGame }) {
+function Start() {
   const classes = useStyles();
-  const [showedModal, onShow] = React.useState(false);
+  const dispatch = useDispatch();
+  const [showedModal, onShow] = useState(false);
 
   const handleClickShow = () => onShow(!showedModal);
   const handleClose = () => onShow(false);
   const onStartGame = (nickname) => {
-    _startGame(nickname);
+    dispatch(startGame(nickname));
     handleClose();
   };
 
@@ -61,8 +62,4 @@ function Start({ _startGame }) {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  _startGame: (nickname) => dispatch(startGame(nickname)),
-})
-
-export default connect(null, mapDispatchToProps)(Start);
+export default Start;

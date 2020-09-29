@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import {
@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 
 function ModalStart({ open, startGame, handleClose }) {
-  const [nickname, setNickname] = React.useState('');
+  const [nickname, setNickname] = useState('');
 
   const handleChangeNickname = (event) => setNickname(event.target.value);
 

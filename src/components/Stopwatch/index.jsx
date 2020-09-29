@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
 
 import { Toolbar, Typography } from '@material-ui/core';
 
-import { stopGame } from 'store/game/actions';
-
 import useStyles from './styles';
 
-function Stopwatch({ _stopGame }) {
+function Stopwatch() {
   const classes = useStyles();
   const [time, setTime] = useState({
     min: 0,
@@ -48,8 +45,4 @@ function Stopwatch({ _stopGame }) {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  _stopGame: (time) => dispatch(stopGame(time)),
-});
-
-export default connect(null, mapDispatchToProps)(Stopwatch);
+export default Stopwatch;

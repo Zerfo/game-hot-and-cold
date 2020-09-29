@@ -1,17 +1,17 @@
 import { START_GAME, STOP_GAME } from './constants';
 
 const initialState = {
-  number: '',
-  nickname: 'Nikolay',
-  time: '',
   isStarted: false,
+  nickname: 'Nikolay',
+  number: '',
+  time: '',
 };
 
 export default function(state = initialState, action) {
   switch(action.type) {
     case START_GAME:
       let number = '';
-      const randNum = `${Math.floor(0 - 0.5 + Math.random() * (999 - 0 + 1))}`;
+      const randNum = Math.floor(0 - 0.5 + Math.random() * (999 - 0 + 1)).toString();
       const numLen = randNum.length;
 
       if(numLen === 3) { number = randNum; }

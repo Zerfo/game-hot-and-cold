@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Paper, Typography, Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
@@ -8,15 +8,17 @@ import { stopGame, startGame } from 'store/game/actions';
 
 import useStyles from './styles';
 
-function FinishGame({ nickname, time, _stopGame, _startGame }) {
+function FinishGame() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    _stopGame(localStorage.getItem('time'));
+    dispatch(stopGame(localStorage.getItem('time')));
     // TODO: write function for saving the game result
     return () => localStorage.removeItem('time');
-  }, [_stopGame]);
+  }, [dispatch]);
 
-  return (
+  return useSelector(({ game: { nickname } }) => (
     <div className={classes.container}>
       <Paper
         elevation={0}
@@ -31,7 +33,7 @@ function FinishGame({ nickname, time, _stopGame, _startGame }) {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => _startGame(nickname)}
+          onClick={() => dispatch(startGame(nickname))}
         >
           <NavLink to='/game'>
             Еще раз
@@ -39,16 +41,7 @@ function FinishGame({ nickname, time, _stopGame, _startGame }) {
         </Button>
       </Paper>
     </div>
-  )
+  ))
 }
 
-const mapStateToProps = (store) => ({
-  nickname: store.game.nickname,
-  time: store.game.time,
-});
-const mapDispatchToProps = (dispatch) => ({
-  _stopGame: (time) => dispatch(stopGame(time)),
-  _startGame: (nickname) => dispatch(startGame(nickname)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(FinishGame);
+export default FinishGame;

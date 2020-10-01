@@ -2,9 +2,9 @@ import { START_GAME, STOP_GAME } from './constants';
 
 const initialState = {
   isStarted: false,
-  nickname: 'Nikolay',
+  nickname: '',
   number: '',
-  time: '',
+  time: '00:00:00',
 };
 
 export default function(state = initialState, action) {

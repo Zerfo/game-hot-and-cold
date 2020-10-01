@@ -5,8 +5,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "jest": "jest --watchAll",
+    "jest:ci": "jest",
+    "cypress": "node_modules/.bin/cypress open",
+    "cypress:ci": "node_modules/.bin/cypress run"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -25,6 +27,8 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "cypress": "^5.3.0",
+    "jest": "^26.4.2",
     "prop-types": "^15.7.2",
     "redux-devtools-extension": "^2.13.8"
   },

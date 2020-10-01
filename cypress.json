@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://localhost:3000/",
+  "fileServerFolder": "__tests__/e2e",
+  "fixturesFolder": "__tests__/e2e/cypress/fixtures",
+  "integrationFolder": "__tests__/e2e/cypress/integration",
+  "pluginsFile": "__tests__/e2e/cypress/plugins/index.js",
+  "screenshotsFolder": "__tests__/e2e/cypress/screenshots",
+  "supportFile": "__tests__/e2e/cypress/support",
+  "video": false
+}

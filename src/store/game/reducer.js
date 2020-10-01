@@ -7,28 +7,20 @@ const initialState = {
   time: '00:00:00',
 };
 
-export default function(state = initialState, action) {
-  switch(action.type) {
+export default function(state = initialState, { type, payload }) {
+  switch(type) {
     case START_GAME:
-      let number = '';
-      const randNum = Math.floor(0 - 0.5 + Math.random() * (999 - 0 + 1)).toString();
-      const numLen = randNum.length;
-
-      if(numLen === 3) { number = randNum; }
-      else if(numLen === 2) { number = '0' + randNum; }
-      else { number = '00' + randNum; }
-
       return {
         ...state,
-        number,
         isStarted: true,
-        nickname: action.payload
+        nickname: payload.nickname,
+        number: payload.number
       }
     case STOP_GAME:
       return {
         ...state,
         isStarted: false,
-        time: action.payload || '00:00:00',
+        time: payload || '00:00:00',
       }
     default:
       return state;

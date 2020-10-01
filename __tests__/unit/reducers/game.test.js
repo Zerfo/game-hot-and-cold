@@ -13,6 +13,7 @@ it('game is started', () => {
   const newState = game_reducer(stateGameReducer, action);
   expect(newState.isStarted).toBe(true);
   expect(newState.nickname).toBe('Nikolay');
+  expect(newState.number).toBe(action.payload.number);
   expect(newState.number).not.toBe('' || undefined || null);
 });
 

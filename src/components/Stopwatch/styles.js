@@ -4,7 +4,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     container: {
       display: 'flex',
-    }
+    },
   }),
 );
 

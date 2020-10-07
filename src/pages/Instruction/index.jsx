@@ -5,11 +5,7 @@ import React from 'react';
 function Instruction() {
   // const classes = useStyles();
 
-  return (
-    <div>
-      Instruction page
-    </div>
-  )
+  return <div>Instruction page</div>;
 }
 
 export default Instruction;

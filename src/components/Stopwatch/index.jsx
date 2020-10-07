@@ -9,7 +9,7 @@ function Stopwatch() {
   const [time, setTime] = useState({
     min: 0,
     sec: 0,
-    ms: 0
+    ms: 0,
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Stopwatch() {
       if (newTime.ms < 100) {
         newTime.ms += 1;
       }
-      if(newTime.ms >=100) {
+      if (newTime.ms >= 100) {
         newTime.sec += 1;
         newTime.ms = 0;
       }
@@ -27,7 +27,12 @@ function Stopwatch() {
         newTime.min += 1;
         newTime.sec = 0;
       }
-      localStorage.setItem('time', Object.values(time).map(itm => itm < 10 ? '0' + itm : itm).join(':'));
+      localStorage.setItem(
+        'time',
+        Object.values(time)
+          .map((itm) => (itm < 10 ? '0' + itm : itm))
+          .join(':'),
+      );
       setTime(newTime);
     }, 10);
 
@@ -38,11 +43,11 @@ function Stopwatch() {
     <Toolbar className={classes.container}>
       <Typography variant="h6">{time.min < 10 ? '0' + time.min : time.min}</Typography>
       <Typography variant="h6">:</Typography>
-      <Typography variant="h6">{time.sec <  10 ? '0' + time.sec : time.sec}</Typography>
+      <Typography variant="h6">{time.sec < 10 ? '0' + time.sec : time.sec}</Typography>
       <Typography variant="h6">:</Typography>
-      <Typography variant="h6">{time.ms <  10 ? '0' + time.ms : time.ms}</Typography>
+      <Typography variant="h6">{time.ms < 10 ? '0' + time.ms : time.ms}</Typography>
     </Toolbar>
-  )
+  );
 }
 
 export default Stopwatch;

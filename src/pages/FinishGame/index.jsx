@@ -1,3 +1,10 @@
+/* eslint-disable
+  react/jsx-closing-tag-location,
+  indent,
+  react/jsx-indent,
+  prettier/prettier,
+  react/jsx-one-expression-per-line
+*/
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -20,28 +27,19 @@ function FinishGame() {
 
   return useSelector(({ game: { nickname } }) => (
     <div className={classes.container}>
-      <Paper
-        elevation={0}
-        className={classes.menu}
-      >
+      <Paper elevation={0} className={classes.menu}>
         <Typography variant="h4" noWrap>
           Поздравляем, {nickname}!
         </Typography>
         <Typography variant="h6" noWrap>
           Итоговое время игры: {localStorage.getItem('time')} (мин:сек:мс)
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => dispatch(startGame(nickname))}
-        >
-          <NavLink to='/game'>
-            Еще раз
-          </NavLink>
+        <Button variant="contained" color="primary" onClick={() => dispatch(startGame(nickname))}>
+          <NavLink to="/game">Еще раз</NavLink>
         </Button>
       </Paper>
     </div>
-  ))
+  ));
 }
 
 export default FinishGame;

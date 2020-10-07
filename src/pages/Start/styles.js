@@ -17,7 +17,7 @@ const useStyles = makeStyles(() =>
     },
     instruction_btn: {
       marginTop: -10,
-    }
+    },
   }),
 );
 

@@ -8,7 +8,9 @@
     "jest": "jest --watchAll",
     "jest:ci": "jest",
     "cypress": "node_modules/.bin/cypress open",
-    "cypress:ci": "node_modules/.bin/cypress run"
+    "cypress:ci": "node_modules/.bin/cypress run",
+    "lint": "node_modules/.bin/eslint --max-warnings 0 --fix --ignore-path .eslintignore .",
+    "prettier": "node_modules/.bin/prettier --write ./src/**"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -22,18 +24,28 @@
     "react-redux": "^7.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",
     "cypress": "^5.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "husky": "^4.3.0",
+    "jest-canvas-mock": "^2.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
     "prop-types": "^15.7.2",
     "redux-devtools-extension": "^2.13.8"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

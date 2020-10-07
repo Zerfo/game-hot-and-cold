@@ -20,14 +20,14 @@ function Root() {
         <Router>
           <Header />
           <Switch>
-            {
-              routes.map((route, index) => <Route key={index} {...route} />)
-            }
+            {routes.map((route, index) => (
+              <Route key={index} {...route} />
+            ))}
           </Switch>
         </Router>
       </Container>
     </Provider>
-  )
-};
+  );
+}
 
 export default Root;

@@ -5,11 +5,7 @@ import React from 'react';
 function Game() {
   // const classes = useStyles();
 
-  return (
-    <div>
-      Game page
-    </div>
-  )
+  return <div>Game page</div>;
 }
 
 export default Game;

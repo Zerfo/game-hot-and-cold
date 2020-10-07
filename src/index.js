@@ -7,9 +7,6 @@ import * as serviceWorker from './serviceWorker';
 
 import 'styles/index.css';
 
-render(
-  <Root />,
-  document.getElementById('root')
-);
+render(<Root />, document.getElementById('root'));
 
 serviceWorker.unregister();

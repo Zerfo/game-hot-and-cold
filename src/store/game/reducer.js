@@ -7,21 +7,21 @@ const initialState = {
   time: '00:00:00',
 };
 
-export default function(state = initialState, { type, payload }) {
-  switch(type) {
+export default function (state = initialState, { type, payload }) {
+  switch (type) {
     case START_GAME:
       return {
         ...state,
         isStarted: true,
         nickname: payload.nickname,
-        number: payload.number
-      }
+        number: payload.number,
+      };
     case STOP_GAME:
       return {
         ...state,
         isStarted: false,
         time: payload || '00:00:00',
-      }
+      };
     default:
       return state;
   }

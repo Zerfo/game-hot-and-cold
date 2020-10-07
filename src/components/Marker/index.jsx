@@ -19,28 +19,23 @@ function Marker({ value, number }) {
       return comparison(el, arrnumber, idx);
     });
 
-    if(newMarker.length === 3 && newMarker.every((itm) => itm === 'hot')) {
+    if (newMarker.length === 3 && newMarker.every((itm) => itm === 'hot')) {
       setMarker(newMarker);
       setTimeout(() => setRedirect(true), 1000);
     } else {
       setMarker(newMarker);
     }
-  }, [value, number])
+  }, [value, number]);
 
   return (
     <div className={classes.container}>
-      {
-        value.length === 3 &&
+      {value.length === 3 &&
         marker.map((itm, idx) => (
-          <div
-            className={classes[itm] + ' ' + classes.el}
-            key={idx}
-          >
-            { itm }
+          <div className={classes[itm] + ' ' + classes.el} key={idx}>
+            {itm}
           </div>
-        ))
-      }
-      { isRedirect && <Redirect to='/finish-game' /> }
+        ))}
+      {isRedirect && <Redirect to="/finish-game" />}
     </div>
   );
 }
@@ -48,10 +43,10 @@ function Marker({ value, number }) {
 Marker.propTypes = {
   value: Pt.string,
   number: Pt.string,
-}
+};
 Marker.defaultProps = {
   value: '',
   number: '',
-}
+};
 
 export default Marker;

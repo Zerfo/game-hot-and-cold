@@ -10,24 +10,18 @@ function Number({ value }) {
 
   return (
     <div className={classes.machine__number}>
-      <div className={classes.machine__number__digit}>
-        {digits[0]}
-      </div>
-      <div className={classes.machine__number__digit}>
-        {digits[1]}
-      </div>
-      <div className={classes.machine__number__digit}>
-        {digits[2]}
-      </div>
+      <div className={classes.machine__number__digit}>{digits[0]}</div>
+      <div className={classes.machine__number__digit}>{digits[1]}</div>
+      <div className={classes.machine__number__digit}>{digits[2]}</div>
     </div>
   );
 }
 
 Number.propTypes = {
   value: Pt.string,
-}
+};
 Number.defaultProps = {
   value: '',
-}
+};
 
 export default Number;

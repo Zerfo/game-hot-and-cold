@@ -21,11 +21,11 @@ it('game is stops without control time', () => {
   const action = stopGame();
   const newState = game_reducer(stateGameReducer, action);
   expect(newState.isStarted).toBe(false);
-})
+});
 
 it('game is stops with the control time', () => {
   const action = stopGame('00:30:00');
   const newState = game_reducer(stateGameReducer, action);
   expect(newState.isStarted).toBe(false);
   expect(newState.time).toBe('00:30:00');
-})
+});

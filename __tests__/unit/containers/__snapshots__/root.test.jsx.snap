@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderers without crashing 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-1"
+  >
+    <BrowserRouter>
+      <Header
+        isStarted={false}
+      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          key="0"
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          key="1"
+          path="/game"
+        />
+        <Route
+          component={[Function]}
+          key="2"
+          path="/finish-game"
+        />
+        <Route
+          component={[Function]}
+          key="3"
+          path="/history"
+        />
+        <Route
+          component={[Function]}
+          key="4"
+          path="/instruction"
+        />
+      </Switch>
+    </BrowserRouter>
+  </WithStyles(ForwardRef(Container))>
+</Provider>
+`;

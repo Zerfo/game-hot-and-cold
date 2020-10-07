@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+
+# production
+/build
+/dist
+
+#configs
+babel.config.js
+jest.config.js
+
+#serviceWorker's
+/src/serviceWorker.js

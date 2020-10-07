@@ -24,17 +24,16 @@ function Header() {
           </Link>
         </Typography>
       </Toolbar>
-      { isStarted && <Stopwatch /> }
+      {isStarted && <Stopwatch />}
     </AppBar>
-    )
-  );
+  ));
 }
 
 Header.propTypes = {
   isStarted: Pt.bool,
-}
+};
 Header.defaultProps = {
   isStarted: false,
-}
+};
 
 export default Header;

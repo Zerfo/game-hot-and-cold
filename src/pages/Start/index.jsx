@@ -24,42 +24,20 @@ function Start() {
 
   return (
     <div className={classes.container}>
-      <Paper
-        elevation={0}
-        className={classes.menu}
-      >
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClickShow}
-          disabled={showedModal}
-        >
+      <Paper elevation={0} className={classes.menu}>
+        <Button variant="contained" color="primary" onClick={handleClickShow} disabled={showedModal}>
           Новая игра
         </Button>
-        <Button
-          variant="outlined"
-          color="primary"
-        >
-          <NavLink to='/history'>
-            История игр
-          </NavLink>
+        <Button variant="outlined" color="primary">
+          <NavLink to="/history">История игр</NavLink>
         </Button>
-        <Button
-          color="primary"
-          className={classes.instruction_btn}
-        >
-          <NavLink to='/instruction'>
-            Инструкция
-          </NavLink>
+        <Button color="primary" className={classes.instruction_btn}>
+          <NavLink to="/instruction">Инструкция</NavLink>
         </Button>
       </Paper>
-      <ModalStart
-        open={showedModal}
-        startGame={onStartGame}
-        handleClose={handleClose}
-      />
+      <ModalStart open={showedModal} startGame={onStartGame} handleClose={handleClose} />
     </div>
-  )
+  );
 }
 
 export default Start;

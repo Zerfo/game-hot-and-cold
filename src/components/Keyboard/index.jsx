@@ -62,10 +62,10 @@ function Keyboard({ onPick, onDelete }) {
 Keyboard.propTypes = {
   onPick: Pt.func,
   onDelete: Pt.func,
-}
+};
 Keyboard.defaultProps = {
   onPick: () => {},
   onDelete: () => {},
-}
+};
 
 export default Keyboard;

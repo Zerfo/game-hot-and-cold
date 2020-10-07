@@ -25,7 +25,7 @@ const routes = [
   {
     component: Instruction,
     path: '/instruction',
-  }
+  },
 ];
 
 export default routes;

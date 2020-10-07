@@ -19,7 +19,7 @@ const useStyles = makeStyles(() =>
       padding: '10px 0 8px',
       textAlign: 'center',
       width: 50,
-      '&::before' : {
+      '&::before': {
         borderBottom: '3px solid black',
         borderColor: '#2e2e2e',
         content: 'no-open-quote',
@@ -28,7 +28,7 @@ const useStyles = makeStyles(() =>
         position: 'relative',
         top: 70,
         width: 50,
-      }
+      },
     },
   }),
 );

@@ -18,7 +18,11 @@ function Header() {
   return useSelector(({ game: { isStarted } }) => (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
-        <Typography variant="h6" noWrap className={classes.title}>
+        <Typography
+          noWrap
+          variant="h6"
+          className={classes.title}
+        >
           <Link to="/" onClick={() => dispatch(stopGame())}>
             Горячо – Холодно
           </Link>

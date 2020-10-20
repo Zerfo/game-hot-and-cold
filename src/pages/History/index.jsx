@@ -2,10 +2,10 @@ import React from 'react';
 
 // import useStyles from './styles';
 
-function Game() {
+function History() {
   // const classes = useStyles();
 
-  return <div>Game page</div>;
+  return <div>History page</div>;
 }
 
-export default Game;
+export default History;

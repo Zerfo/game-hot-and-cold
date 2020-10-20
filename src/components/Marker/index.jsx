@@ -15,9 +15,7 @@ function Marker({ value, number }) {
     const arrValue = value.split('');
     const arrnumber = number.split('');
 
-    const newMarker = arrValue.map((el, idx) => {
-      return comparison(el, arrnumber, idx);
-    });
+    const newMarker = arrValue.map((el, idx) => comparison(el, arrnumber, idx));
 
     if (newMarker.length === 3 && newMarker.every((itm) => itm === 'hot')) {
       setMarker(newMarker);

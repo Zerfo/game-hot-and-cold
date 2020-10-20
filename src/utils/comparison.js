@@ -1,7 +1,7 @@
 /**
  *
  * @param {number} value
- * @param {umber} position
+ * @param {number} position
  * @param {array} number
  */
 export default function comparison(value, number, position) {

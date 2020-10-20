@@ -34,7 +34,11 @@ function FinishGame() {
         <Typography variant="h6" noWrap>
           Итоговое время игры: {localStorage.getItem('time')} (мин:сек:мс)
         </Typography>
-        <Button variant="contained" color="primary" onClick={() => dispatch(startGame(nickname))}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => dispatch(startGame(nickname))}
+        >
           <NavLink to="/game">Еще раз</NavLink>
         </Button>
       </Paper>

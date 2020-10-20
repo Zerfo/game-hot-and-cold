@@ -25,7 +25,12 @@ function Start() {
   return (
     <div className={classes.container}>
       <Paper elevation={0} className={classes.menu}>
-        <Button variant="contained" color="primary" onClick={handleClickShow} disabled={showedModal}>
+        <Button
+          variant="contained"
+          color="primary"
+          disabled={showedModal}
+          onClick={handleClickShow}
+        >
           Новая игра
         </Button>
         <Button variant="outlined" color="primary">
@@ -35,7 +40,11 @@ function Start() {
           <NavLink to="/instruction">Инструкция</NavLink>
         </Button>
       </Paper>
-      <ModalStart open={showedModal} startGame={onStartGame} handleClose={handleClose} />
+      <ModalStart
+        open={showedModal}
+        startGame={onStartGame}
+        handleClose={handleClose}
+      />
     </div>
   );
 }

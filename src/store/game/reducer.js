@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export default function (state = initialState, { type, payload }) {
-  switch (type) {
+  switch(type) {
     case START_GAME:
       return {
         ...state,

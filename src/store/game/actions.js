@@ -4,7 +4,7 @@ export function startGame(nickname) {
   let number = '';
   const randNum = Math.floor(0 - 0.5 + Math.random() * (999 - 0 + 1)).toString();
 
-  switch(randNum.length) {
+  switch (randNum.length) {
     case 3:
       number = randNum;
       break;

@@ -137,6 +137,7 @@ module.exports = {
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
+  setupFiles: ["<rootDir>/__tests__/unit/setupTests.js"],
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -146,7 +147,7 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    "**/__tests__/unit/**/*.(spec|test).[jt]s?(x)",
+    "**/__tests__/unit/**/*.(spec|test).[jt]s?(x)"
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped

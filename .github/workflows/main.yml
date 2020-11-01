@@ -35,8 +35,12 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install
-      - run: npm run start
-      - run: npm run cypress:ci
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm start
+          command: npm run cyress:ci
   firebase-deploy:
     needs: [eslit, unit-testing, e2e-testing]
     runs-on: ubuntu-latest

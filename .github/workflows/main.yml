@@ -40,7 +40,7 @@ jobs:
           browser: chrome
           headless: true
           start: npm start
-          command: npm run cyress:ci
+          command: npm run cypress:ci
   firebase-deploy:
     needs: [eslit, unit-testing, e2e-testing]
     runs-on: ubuntu-latest

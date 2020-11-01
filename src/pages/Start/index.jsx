@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
@@ -13,7 +12,7 @@ import useStyles from './styles';
 function Start() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const [showedModal, onShow] = useState(false);
+  const [showedModal, onShow] = React.useState(false);
 
   const handleClickShow = () => onShow(!showedModal);
   const handleClose = () => onShow(false);
@@ -25,12 +24,7 @@ function Start() {
   return (
     <div className={classes.container}>
       <Paper elevation={0} className={classes.menu}>
-        <Button
-          variant="contained"
-          color="primary"
-          disabled={showedModal}
-          onClick={handleClickShow}
-        >
+        <Button variant="contained" color="primary" disabled={showedModal} onClick={handleClickShow}>
           Новая игра
         </Button>
         <Button variant="outlined" color="primary">
@@ -40,11 +34,7 @@ function Start() {
           <NavLink to="/instruction">Инструкция</NavLink>
         </Button>
       </Paper>
-      <ModalStart
-        open={showedModal}
-        startGame={onStartGame}
-        handleClose={handleClose}
-      />
+      <ModalStart open={showedModal} startGame={onStartGame} handleClose={handleClose} />
     </div>
   );
 }

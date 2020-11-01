@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Pt from 'prop-types';
 
@@ -18,11 +17,7 @@ function Header() {
   return useSelector(({ game: { isStarted } }) => (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
-        <Typography
-          noWrap
-          variant="h6"
-          className={classes.title}
-        >
+        <Typography noWrap variant="h6" className={classes.title}>
           <Link to="/" onClick={() => dispatch(stopGame())}>
             Горячо – Холодно
           </Link>

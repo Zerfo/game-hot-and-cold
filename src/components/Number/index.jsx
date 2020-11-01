@@ -1,4 +1,3 @@
-import React from 'react';
 import Pt from 'prop-types';
 
 import useStyles from './styles';

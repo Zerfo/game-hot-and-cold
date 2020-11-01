@@ -1,4 +1,3 @@
-import React from 'react';
 import Pt from 'prop-types';
 
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspace';

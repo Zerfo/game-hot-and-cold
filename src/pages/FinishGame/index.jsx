@@ -5,7 +5,6 @@
   prettier/prettier,
   react/jsx-one-expression-per-line
 */
-import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Paper, Typography, Button } from '@material-ui/core';
@@ -19,7 +18,7 @@ function FinishGame() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     dispatch(stopGame(localStorage.getItem('time')));
     // TODO: write function for saving the game result
     return () => localStorage.removeItem('time');

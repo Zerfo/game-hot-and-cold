@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-
 import { Toolbar, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 
 function Stopwatch() {
   const classes = useStyles();
-  const [time, setTime] = useState({
+  const [time, setTime] = React.useState({
     min: 0,
     sec: 0,
     ms: 0,
@@ -14,7 +12,7 @@ function Stopwatch() {
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
-      let newTime = Object.assign({}, time);
+      const newTime = { ...time };
 
       if (newTime.ms < 100) {
         newTime.ms += 1;
@@ -30,7 +28,7 @@ function Stopwatch() {
       localStorage.setItem(
         'time',
         Object.values(time)
-          .map((itm) => (itm < 10 ? '0' + itm : itm))
+          .map((itm) => (itm < 10 ? `0${itm}` : itm))
           .join(':'),
       );
       setTime(newTime);
@@ -41,11 +39,11 @@ function Stopwatch() {
 
   return (
     <Toolbar className={classes.container}>
-      <Typography variant="h6">{time.min < 10 ? '0' + time.min : time.min}</Typography>
+      <Typography variant="h6">{time.min < 10 ? `0${time.min}` : time.min}</Typography>
       <Typography variant="h6">:</Typography>
-      <Typography variant="h6">{time.sec < 10 ? '0' + time.sec : time.sec}</Typography>
+      <Typography variant="h6">{time.sec < 10 ? `0${time.sec}` : time.sec}</Typography>
       <Typography variant="h6">:</Typography>
-      <Typography variant="h6">{time.ms < 10 ? '0' + time.ms : time.ms}</Typography>
+      <Typography variant="h6">{time.ms < 10 ? `0${time.ms}` : time.ms}</Typography>
     </Toolbar>
   );
 }

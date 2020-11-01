@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Keyboard from 'components/Keyboard';
@@ -9,7 +8,7 @@ import useStyles from './styles';
 
 function History() {
   const classes = useStyles();
-  const [number, setNumber] = useState('');
+  const [number, setNumber] = React.useState('');
 
   const onPick = (value) => {
     if (number.length < 3) {

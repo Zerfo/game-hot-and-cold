@@ -37,15 +37,16 @@ jobs:
       - run: npm install
       - run: npm run start
       - run: npm run cypress:ci
-#   firebase-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@master
-#       - uses: actions/setup-node@master
-#         with:
-#           node-version: '10.x'
-#       - run: npm install
-#       - run: npm run build
+  firebase-deploy:
+    needs: [eslit, unit-testing, e2e-testing]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: npm run build
 #       - uses: w9jds/firebase-action@master
 #         with:
 #           args: deploy --only hosting

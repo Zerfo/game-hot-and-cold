@@ -4,9 +4,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   eslit:
@@ -51,4 +51,3 @@ jobs:
 #           args: deploy --only hosting
 #         env:
 #           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-  
